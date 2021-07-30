@@ -1,3 +1,11 @@
+/*    Grupo: JAVASCRIPT
+      APLICACION: DIBUJO EN CANVAS EN UNA PAGINA WEB
+      AUTORES:
+            Chua Aguilar Jean Carlo Leonel
+            Azurin Zuñiga Eberth Wilfredo
+          	Alvarez Astete Kevin Jheeremy
+            Garcia Valdivia Ronald Pablo
+*/
 //asigna a una variable el objeto canvas "dVinci"
 var cuadro = document.getElementById('dVinci')
 var papel = cuadro.getContext("2d")
@@ -35,7 +43,7 @@ botonDecremento.addEventListener("click", decremento)
 botonAzul.addEventListener("click",lapizAzul)
 botonVerde.addEventListener("click",lapizVerde)
 botonRosado.addEventListener("click",lapizRosado)
-
+//funcion asigna las coordenadas iniciales de la linea a dibujar
 function xyz(event){
   // posicion inicial donde se empieza el dibujo
   xi = event.layerX
@@ -43,6 +51,7 @@ function xyz(event){
   // asignando el valor buttons que se obtiene del evento a la variable "clickear", para este caso siempre es 1
   clickear = event.buttons
 }
+//funcion asgina coordenadas finales y dibuja la linea si se esta manteniendo el click
 function xyz1(event1){
   if (clickear == 1){
     // posicion final obtenida por el evento mousemove
@@ -53,6 +62,7 @@ function xyz1(event1){
     yi = yf
   }
 }
+//funcion que asigna las coordenadas finales y finaliza el trazado de la linea
 function xyz2(event2){
   var xf = event2.layerX
   var yf = event2.layerY
@@ -102,7 +112,7 @@ function decremento(){
     h--;
   }
 }
-
+//funcion que dibuja una recta en canvas
 function dibujar(color, xi, yi, xf, yf, lienzo){
   lienzo.beginPath()
   lienzo.strokeStyle = color
